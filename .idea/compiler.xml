@@ -9,13 +9,22 @@
         <module name="organisation-ms" />
         <module name="config-server" />
         <module name="eureka-discovery" />
-        <module name="donations-ms" />
         <module name="user-ms2" />
         <module name="gateway-service" />
+      </profile>
+      <profile name="Annotation profile for donation-ms" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="donation-ms" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Config-Server" target="17" />
+      <module name="donations-ms" target="17" />
       <module name="gateway-sv" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -23,6 +32,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Config-Server" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="donation-ms" options="-parameters" />
       <module name="donations-ms" options="-parameters" />
       <module name="eureka-discovery" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
